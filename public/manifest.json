@@ -1,0 +1,34 @@
+{
+    "name": "Untyped Text Capturer",
+    "version": "1.0",
+    "description":"Capturing untyped text",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html",
+        "default_title":"Open"
+      },
+      "background":{
+         "service_worker":"background.js"
+      },
+      "permissions": [
+        "activeTab",
+        "contextMenus",
+        "storage",
+        "scripting"
+      ],
+      "icons": {
+        "16": "key_board2.png",
+        "48": "key_board2.png",
+        "128": "key_board2.png"
+      },
+      "host_permissions": [
+        "<all_urls>",
+        "*://*/_/chrome/newtab*"
+      ],
+    "content_scripts":[
+         {
+          "matches":["<all_urls>"],
+          "js":["contentScript.js"]
+         }
+      ]
+  }
