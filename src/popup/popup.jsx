@@ -24,7 +24,9 @@ const Popup = () => {
             </div>
           </b>
           <b>
-            <div>Copy captured text</div>
+            <div>
+              Copy captured text
+            </div>
           </b>
         </div>
       </div>
