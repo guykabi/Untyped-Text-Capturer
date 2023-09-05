@@ -1,3 +1,4 @@
+
 const copying = async(text) =>{
     try{
         await navigator.clipboard.writeText(text)
@@ -23,7 +24,20 @@ export const capturedText = (text) =>{
     
     if(text.length && isFocus().output){
         copying(text)
-        return ''
+        return ""
     }
   
+  }
+
+let regexTest = /^[\p{L}0-9\s'()\-\/\\!@#$%^&*_,.?":;{}~+=<>/\]\[/]+$/u;
+
+export const regex = (text) => {
+    
+   if(regexTest.test(text) && text.length < 2 || text === 'Backspace'){
+   
+      if(text === 'Backspace'){
+        return 'delete'
+      }
+      return 'valid'
+    }
   }
